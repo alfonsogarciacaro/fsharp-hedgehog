@@ -27,3 +27,10 @@ group Testing
     source https://nuget.org/api/v2
 
     nuget Doctest
+
+group Fable
+    source https://nuget.org/api/v2
+    storage:none
+
+    nuget Fable.Core
+    clitool dotnet-fable

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="LazyList.fs" />
+    <Compile Include="../Hedgehog/Numeric.fs" />
+    <Compile Include="../Hedgehog/Seed.fs" />
+    <Compile Include="../Hedgehog/Tree.fs" />
+    <Compile Include="../Hedgehog/Range.fs" />
+    <Compile Include="../Hedgehog/Random.fs" />
+    <Compile Include="../Hedgehog/Shrink.fs" />
+    <Compile Include="../Hedgehog/Gen.fs" />
+    <Compile Include="../Hedgehog/Property.fs" />
+    <!-- <Compile Include="LinqSupport.fs" /> -->
+  </ItemGroup>
+  <Import Project="..\..\.paket\Paket.Restore.targets" />
+</Project>

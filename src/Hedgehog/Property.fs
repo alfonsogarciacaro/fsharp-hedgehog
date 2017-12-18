@@ -124,8 +124,8 @@ module private Pretty =
         | n ->
             sprintf " and %d shrinks" n
 
-    let private append (sb : StringBuilder) (msg : string) : unit =
-        sb.AppendLine msg |> ignore
+    // let private append (sb : StringBuilder) (msg : string) : unit =
+    //     sb.AppendLine msg |> ignore
 
     let renderOK (tests : int<tests>) : string =
         sprintf "+++ OK, passed %s." (renderTests tests)
@@ -140,17 +140,18 @@ module private Pretty =
             (discards : int<discards>)
             (shrinks : int<shrinks>)
             (journal : Journal) : string =
-        let sb = StringBuilder ()
+        let mutable sb = "" //StringBuilder ()
+        let append msg = sb <- sb + msg
 
         sprintf "*** Failed! Falsifiable (after %s%s%s):"
             (renderTests tests)
             (renderAndShrinks shrinks)
             (renderAndDiscards discards)
-            |> append sb
+            |> append
 
-        List.iter (append sb) (Journal.toList journal)
+        List.iter (append) (Journal.toList journal)
 
-        sb.ToString(0, sb.Length - 1) // exclude extra newline
+        sb // exclude extra newline
 
 [<AbstractClass>]
 type HedgehogException (message : string) =

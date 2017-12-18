@@ -1,0 +1,4 @@
+group Fable
+dotnet-fable
+Fable.Core
+

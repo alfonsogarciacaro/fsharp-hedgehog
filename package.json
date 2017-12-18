@@ -1,0 +1,14 @@
+{
+  "name": "fsharp-hedgehog",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "postinstall": "dotnet restore src/Hedgehog.fable",
+    "build": "cd src/Hedgehog.fable && dotnet fable yarn-splitter",
+    "splitter": "fable-splitter -c splitter.config.js"
+  },
+  "dependencies": {
+    "fable-splitter": "^0.1.20",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0"
+  }
+}
